@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="D' Handy Flow Factory – Premium barbershop in Santo Domingo. Style. Precision. Identity.">
-  <title>D' Handy Flow Factory | Premium Barbershop Santo Domingo</title>
+  <title>D' Handy Flow Factory | Barbería Premium – Santo Domingo</title>
+  <meta name="description" content="D' Handy Flow Factory – Barbería premium en Santo Domingo. Estilo. Precisión. Identidad.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,417 +12,349 @@
 </head>
 <body>
 
-  <!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
+  <!-- ══ NAVBAR ══════════════════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
       <a href="#home" class="nav-logo">
-        <img src="/images/logo.png" alt="D' Handy Flow Factory" class="logo-img">
+        <img src="/images/logo.png" alt="D' Handy Flow Factory">
       </a>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#home"     class="nav-link active">Home</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#gallery"  class="nav-link">Gallery</a></li>
-        <li><a href="#about"    class="nav-link">About</a></li>
-        <li><a href="#contact"  class="nav-link">Contact</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home"     class="nav-link active" data-i18n="nav_home">Inicio</a>
+        <a href="#services" class="nav-link" data-i18n="nav_services">Servicios</a>
+        <a href="#gallery"  class="nav-link" data-i18n="nav_gallery">Galería</a>
+        <a href="#about"    class="nav-link" data-i18n="nav_about">Nosotros</a>
+        <a href="#contact"  class="nav-link" data-i18n="nav_contact">Contacto</a>
+      </nav>
+      <div class="nav-end">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="es">ES</button>
+          <span aria-hidden="true">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+  <!-- ══ HERO ════════════════════════════════════════════════════ -->
   <section class="hero" id="home">
-    <div class="hero-bg">
-      <div class="glow glow-red"></div>
-      <div class="glow glow-blue"></div>
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-spotlight"></div>
       <div class="hero-stripes"></div>
-      <div class="hero-vignette"></div>
+    </div>
+    <!-- Barber-pole accent (decorative, desktop only) -->
+    <div class="barber-pole" aria-hidden="true">
+      <div class="bp-r"></div>
+      <div class="bp-w"></div>
+      <div class="bp-b"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-badge">Santo Domingo &nbsp;·&nbsp; Est. 2018</div>
-      <h1 class="hero-title">
-        <span class="ht-line">Style.</span>
-        <span class="ht-line">Precision.</span>
-        <span class="ht-line ht-accent">Identity.</span>
+      <div class="hero-logo-wrap">
+        <img src="/images/logo.png" alt="D' Handy Flow Factory" class="hero-logo">
+      </div>
+      <p class="hero-badge" data-i18n="hero_badge">Santo Domingo · Est. 2018</p>
+      <h1 class="hero-h1">
+        <span data-i18n="hero_line1">Estilo.</span>
+        <span data-i18n="hero_line2">Precisión.</span>
+        <span class="red-line" data-i18n="hero_line3">Identidad.</span>
       </h1>
-      <p class="hero-sub">Premium barber experience in Santo Domingo.<br>Where every cut tells your story.</p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">Book Appointment</a>
-        <a href="https://wa.me/18090000000" class="btn btn-wa" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp
+      <p class="hero-sub" data-i18n="hero_sub">Experiencia premium de barbería en Santo Domingo.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-red" data-i18n="hero_cta1">Reservar Cita</a>
+        <a href="https://wa.me/18090000000" class="btn btn-ghost" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-i18n="hero_cta2">WhatsApp</span>
         </a>
       </div>
     </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-bar"></div>
-    </div>
+    <a href="#services" class="scroll-hint" aria-label="Bajar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
   </section>
 
-  <!-- ═══════════════════════════ SERVICES ═══════════════════════════ -->
-  <section class="services" id="services">
-    <div class="angle-top"></div>
+  <!-- ══ SERVICES ════════════════════════════════════════════════ -->
+  <section class="section s-dark" id="services">
     <div class="container">
-      <div class="section-head center">
-        <span class="label">What We Do</span>
-        <h2 class="title">Our Services</h2>
-        <p class="desc">Premium cuts and grooming for the modern man.</p>
-      </div>
-      <div class="services-grid">
+      <header class="sec-head center">
+        <span class="sec-label" data-i18n="sec_svc_lbl">Lo Que Hacemos</span>
+        <h2 class="sec-title" data-i18n="sec_svc_ttl">Nuestros Servicios</h2>
+        <p class="sec-desc" data-i18n="sec_svc_desc">Cortes y arreglos premium para el hombre moderno.</p>
+      </header>
+      <div class="svc-grid">
 
-        <div class="svc-card">
+        <article class="svc-card">
           <div class="svc-icon">
-            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="28" cy="20" r="12"/>
-              <path d="M16 20c0 10 5 16 12 16s12-6 12-16"/>
-              <path d="M22 44l-3 8M34 44l3 8M26 44l1 8M30 44l-1 8"/>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="24" cy="18" r="10"/><path d="M14 18c0 9 4 14 10 14s10-5 10-14"/>
+              <path d="M18 40l-2 6M30 40l2 6M22 40l1 6M26 40l-1 6"/>
             </svg>
           </div>
-          <h3 class="svc-name">Classic Haircut</h3>
-          <p class="svc-desc">Sharp, clean cuts tailored to your face shape. Classic to contemporary — we read the room.</p>
-          <div class="svc-price">From RD$500</div>
-          <div class="svc-glow"></div>
-        </div>
+          <h3 data-i18n="svc1_name">Corte Clásico</h3>
+          <p data-i18n="svc1_desc">Cortes limpios y precisos adaptados a tu estilo y forma de rostro.</p>
+          <div class="svc-price"><span data-i18n="svc_from">Desde</span> RD$500</div>
+        </article>
 
-        <div class="svc-card featured">
-          <div class="svc-badge">Popular</div>
+        <article class="svc-card svc-pop">
+          <span class="svc-badge" data-i18n="badge_pop">Popular</span>
           <div class="svc-icon">
-            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 24c0-8 6-14 14-14s14 6 14 14"/>
-              <path d="M10 34s4 12 18 12 18-12 18-12"/>
-              <path d="M20 14s-4 5-4 10 3 8 3 8"/>
-              <path d="M36 14s4 5 4 10-3 8-3 8"/>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20c0-7 5-12 12-12s12 5 12 12"/><path d="M8 30s3 10 16 10 16-10 16-10"/>
+              <path d="M18 12s-3 4-3 8 2 7 2 7"/><path d="M30 12s3 4 3 8-2 7-2 7"/>
             </svg>
           </div>
-          <h3 class="svc-name">Beard Grooming</h3>
-          <p class="svc-desc">Precision shaping, detailing and trimming for a beard that commands attention.</p>
-          <div class="svc-price">From RD$400</div>
-          <div class="svc-glow"></div>
-        </div>
+          <h3 data-i18n="svc2_name">Arreglo de Barba</h3>
+          <p data-i18n="svc2_desc">Perfilado y definición de barba para el look que buscas.</p>
+          <div class="svc-price"><span data-i18n="svc_from">Desde</span> RD$400</div>
+        </article>
 
-        <div class="svc-card">
+        <article class="svc-card">
           <div class="svc-icon">
-            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M28 8v40"/>
-              <path d="M14 18c0 0-4 5-4 10s4 10 4 10"/>
-              <path d="M42 18c0 0 4 5 4 10s-4 10-4 10"/>
-              <path d="M14 28h28"/>
-              <path d="M18 48l10-10 10 10"/>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M24 6v36"/><path d="M12 16s-4 4-4 8 4 8 4 8"/><path d="M36 16s4 4 4 8-4 8-4 8"/>
+              <path d="M12 24h24"/><path d="M16 42l8-8 8 8"/>
             </svg>
           </div>
-          <h3 class="svc-name">Fade Specialist</h3>
-          <p class="svc-desc">Low, mid, high fades with flawless transitions. Clean lines, zero gaps, maximum edge.</p>
-          <div class="svc-price">From RD$600</div>
-          <div class="svc-glow"></div>
-        </div>
+          <h3 data-i18n="svc3_name">Fade Specialist</h3>
+          <p data-i18n="svc3_desc">Degradados bajos, medios y altos con transiciones perfectas.</p>
+          <div class="svc-price"><span data-i18n="svc_from">Desde</span> RD$600</div>
+        </article>
 
-        <div class="svc-card">
+        <article class="svc-card">
           <div class="svc-icon">
-            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="28" cy="20" r="10"/>
-              <path d="M16 42c0-6.6 5.4-12 12-12s12 5.4 12 12"/>
-              <path d="M23 14s2 4 5 4 5-4 5-4"/>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="24" cy="17" r="9"/><path d="M14 36c0-5.5 4.5-10 10-10s10 4.5 10 10"/>
+              <path d="M20 11s2 4 4 4 4-4 4-4"/>
             </svg>
           </div>
-          <h3 class="svc-name">Kids Cuts</h3>
-          <p class="svc-desc">Fun, comfortable cuts for the little ones. Patient craft, clean results, happy faces.</p>
-          <div class="svc-price">From RD$350</div>
-          <div class="svc-glow"></div>
-        </div>
+          <h3 data-i18n="svc4_name">Corte Infantil</h3>
+          <p data-i18n="svc4_desc">Experiencia cómoda y divertida para los más pequeños.</p>
+          <div class="svc-price"><span data-i18n="svc_from">Desde</span> RD$350</div>
+        </article>
 
-        <div class="svc-card featured-blue">
-          <div class="svc-badge blue">Premium</div>
+        <article class="svc-card svc-prem">
+          <span class="svc-badge svc-badge-blue" data-i18n="badge_prem">Premium</span>
           <div class="svc-icon">
-            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M28 6l5.5 16H50l-13 9.5 5 16L28 37l-14 10.5 5-16L6 22h16.5z"/>
-            </svg>
-          </div>
-          <h3 class="svc-name">Premium Package</h3>
-          <p class="svc-desc">Full service: haircut + beard + skin treatment + styling. The complete D' Handy experience.</p>
-          <div class="svc-price">From RD$1,200</div>
-          <div class="svc-glow"></div>
-        </div>
-
-        <div class="svc-card">
-          <div class="svc-icon">
-            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 12L14 44M38 12l4 32"/>
-              <path d="M16 28h24"/>
-              <path d="M18 12c0 0 4-4 10-4s10 4 10 4"/>
-              <path d="M14 44h28"/>
-            </svg>
-          </div>
-          <h3 class="svc-name">Line Design</h3>
-          <p class="svc-desc">Custom line art and hair tattoo designs. Your identity, etched with precision.</p>
-          <div class="svc-price">From RD$700</div>
-          <div class="svc-glow"></div>
-        </div>
-
-      </div>
-    </div>
-    <div class="angle-bottom"></div>
-  </section>
-
-  <!-- ═══════════════════════════ GALLERY ═══════════════════════════ -->
-  <section class="gallery" id="gallery">
-    <div class="container">
-      <div class="section-head center">
-        <span class="label">Our Work</span>
-        <h2 class="title">The Gallery</h2>
-        <p class="desc">Every cut is a masterpiece. Every client leaves with confidence.</p>
-      </div>
-      <div class="gallery-grid">
-        <div class="g-item g-wide">
-          <img src="https://picsum.photos/seed/barber1/900/500" alt="Premium Fade" loading="lazy">
-          <div class="g-overlay"><span>Premium Fade</span></div>
-        </div>
-        <div class="g-item">
-          <img src="https://picsum.photos/seed/barber2/500/500" alt="Line Design" loading="lazy">
-          <div class="g-overlay"><span>Line Design</span></div>
-        </div>
-        <div class="g-item">
-          <img src="https://picsum.photos/seed/barber3/500/500" alt="Beard Shaping" loading="lazy">
-          <div class="g-overlay"><span>Beard Shaping</span></div>
-        </div>
-        <div class="g-item">
-          <img src="https://picsum.photos/seed/barber4/500/500" alt="Classic Cut" loading="lazy">
-          <div class="g-overlay"><span>Classic Cut</span></div>
-        </div>
-        <div class="g-item g-tall">
-          <img src="https://picsum.photos/seed/barber5/500/900" alt="Full Style" loading="lazy">
-          <div class="g-overlay"><span>Full Style</span></div>
-        </div>
-        <div class="g-item">
-          <img src="https://picsum.photos/seed/barber6/500/500" alt="Kids Cut" loading="lazy">
-          <div class="g-overlay"><span>Kids Cut</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
-  <section class="about" id="about">
-    <div class="about-glow"></div>
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-copy">
-          <span class="label">The Brand</span>
-          <h2 class="title">Built on Skill.<br>Driven by Passion.</h2>
-          <p>D' Handy Flow Factory was born in the streets of Santo Domingo with one mission: give every man the cut he deserves. We don't just cut hair — we craft identities.</p>
-          <p>Our barbers blend classic technique with modern edge, turning every appointment into an experience. From the first line to the last detail, every cut is a signature.</p>
-          <p>This is more than a barbershop. This is your spot. Your brand. Your flow.</p>
-          <a href="#contact" class="btn btn-primary">Book Your Cut</a>
-        </div>
-        <div class="about-stats">
-          <div class="stat-card">
-            <div class="stat-num" data-target="2500">0</div>
-            <div class="stat-lbl">Happy Clients</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num" data-target="6">0</div>
-            <div class="stat-lbl">Years in Business</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num" data-target="8">0</div>
-            <div class="stat-lbl">Expert Barbers</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num" data-target="100">0</div>
-            <div class="stat-lbl">% Satisfaction</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ WHY US ═══════════════════════════ -->
-  <section class="why-us">
-    <div class="container">
-      <div class="section-head center">
-        <span class="label">Why Us</span>
-        <h2 class="title">Why D' Handy Flow?</h2>
-      </div>
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M24 4l4.8 14.4H44l-12 8.8 4.8 14.4L24 33.2 11.2 41.6 16 27.2 4 18.4h15.2z"/>
             </svg>
           </div>
-          <h3>Clean Cuts</h3>
-          <p>Crisp lines, smooth fades, sharp details — every single time, no exceptions.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-              <path d="M10 38l8-16 8 8 8-20 8 14"/>
-              <circle cx="10" cy="38" r="2" fill="currentColor"/>
-              <circle cx="42" cy="24" r="2" fill="currentColor"/>
+          <h3 data-i18n="svc5_name">Paquete Premium</h3>
+          <p data-i18n="svc5_desc">Corte + barba + tratamiento + estilizado. La experiencia completa.</p>
+          <div class="svc-price svc-price-blue"><span data-i18n="svc_from">Desde</span> RD$1,200</div>
+        </article>
+
+        <article class="svc-card">
+          <div class="svc-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 8L11 40M33 8l4 32"/><path d="M13 24h22"/>
+              <path d="M15 8s4-4 9-4 9 4 9 4"/><path d="M11 40h26"/>
             </svg>
           </div>
-          <h3>Professional Tools</h3>
-          <p>Top-tier clippers, razors, and grooming products. Precision gear for precision work.</p>
+          <h3 data-i18n="svc6_name">Diseño de Líneas</h3>
+          <p data-i18n="svc6_desc">Arte personalizado en cabello. Tu identidad, trazada con precisión.</p>
+          <div class="svc-price"><span data-i18n="svc_from">Desde</span> RD$700</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ GALLERY ══════════════════════════════════════════════════ -->
+  <section class="section s-base" id="gallery">
+    <div class="container">
+      <header class="sec-head center">
+        <span class="sec-label" data-i18n="sec_gal_lbl">Nuestro Trabajo</span>
+        <h2 class="sec-title" data-i18n="sec_gal_ttl">La Galería</h2>
+        <p class="sec-desc" data-i18n="sec_gal_desc">Cada corte es una obra. Cada cliente sale con confianza.</p>
+      </header>
+      <div class="gallery-grid">
+        <div class="g-item"><img src="https://picsum.photos/seed/barber11/600/450" alt="Premium Fade" loading="lazy"><div class="g-cap">Premium Fade</div></div>
+        <div class="g-item"><img src="https://picsum.photos/seed/barber12/600/450" alt="Line Design" loading="lazy"><div class="g-cap">Line Design</div></div>
+        <div class="g-item"><img src="https://picsum.photos/seed/barber13/600/450" alt="Beard Shaping" loading="lazy"><div class="g-cap">Beard Shaping</div></div>
+        <div class="g-item"><img src="https://picsum.photos/seed/barber14/600/450" alt="Classic Cut" loading="lazy"><div class="g-cap">Classic Cut</div></div>
+        <div class="g-item"><img src="https://picsum.photos/seed/barber15/600/450" alt="Full Style" loading="lazy"><div class="g-cap">Full Style</div></div>
+        <div class="g-item"><img src="https://picsum.photos/seed/barber16/600/450" alt="Skin Fade" loading="lazy"><div class="g-cap">Skin Fade</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ════════════════════════════════════════════════════ -->
+  <section class="section s-dark" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-copy">
+          <span class="sec-label" data-i18n="sec_about_lbl">La Marca</span>
+          <h2 class="sec-title" data-i18n="sec_about_ttl">Construido con Habilidad.\nMovido por Pasión.</h2>
+          <p data-i18n="about_p1">D' Handy Flow Factory nació en las calles de Santo Domingo con una misión: darle a cada hombre el corte que merece. No solo cortamos cabello — creamos identidades.</p>
+          <p data-i18n="about_p2">Nuestros barberos combinan técnica clásica con estilo moderno, convirtiendo cada cita en una experiencia única. Desde la primera línea hasta el último detalle.</p>
+          <p data-i18n="about_p3">Esto es más que una barbería. Es tu lugar. Tu marca. Tu flow.</p>
+          <a href="#contact" class="btn btn-red" data-i18n="about_cta">Reservar Corte</a>
         </div>
-        <div class="why-card">
-          <div class="why-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="8" y="8" width="13" height="13" rx="2"/>
-              <rect x="27" y="8" width="13" height="13" rx="2"/>
-              <rect x="8" y="27" width="13" height="13" rx="2"/>
-              <rect x="27" y="27" width="13" height="13" rx="2"/>
-            </svg>
+        <div class="about-stats">
+          <div class="stat">
+            <strong class="stat-n" data-target="2500">0</strong>
+            <span data-i18n="stat1_lbl">Clientes Felices</span>
           </div>
-          <h3>Modern Style</h3>
-          <p>Always current with the latest trends. From classic to contemporary, we do it all.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-              <circle cx="24" cy="24" r="18"/>
-              <path d="M24 14v10l6 6"/>
-            </svg>
+          <div class="stat">
+            <strong class="stat-n" data-target="6">0</strong>
+            <span data-i18n="stat2_lbl">Años de Experiencia</span>
           </div>
-          <h3>Fast Service</h3>
-          <p>We respect your time. In and out with a fresh cut — care and precision, not shortcuts.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M10 26l10 10 18-20"/>
-            </svg>
+          <div class="stat">
+            <strong class="stat-n" data-target="8">0</strong>
+            <span data-i18n="stat3_lbl">Barberos Expertos</span>
           </div>
-          <h3>Attention to Detail</h3>
-          <p>Necklines, temples, edges — we sweat every detail so you walk out looking perfect.</p>
+          <div class="stat">
+            <strong class="stat-n" data-target="100">0</strong>
+            <span data-i18n="stat4_lbl">% Satisfacción</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
-  <section class="contact" id="contact">
-    <div class="angle-top dark"></div>
+  <!-- ══ WHY US ═══════════════════════════════════════════════════ -->
+  <section class="section s-base">
     <div class="container">
-      <div class="section-head center">
-        <span class="label">Get In Touch</span>
-        <h2 class="title">Book Your Appointment</h2>
-        <p class="desc">Ready for a fresh cut? Reach out and we'll set you up.</p>
+      <header class="sec-head center">
+        <span class="sec-label" data-i18n="sec_why_lbl">Por Qué Nosotros</span>
+        <h2 class="sec-title" data-i18n="sec_why_ttl">¿Por Qué D' Handy Flow?</h2>
+      </header>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <h3 data-i18n="why1_ttl">Cortes Limpios</h3>
+          <p data-i18n="why1_desc">Líneas precisas, fades suaves, detalles nítidos. Sin excepciones.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <h3 data-i18n="why2_ttl">Herramientas Pro</h3>
+          <p data-i18n="why2_desc">Máquinas, navajas y productos de primer nivel. Precisión garantizada.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <h3 data-i18n="why3_ttl">Estilo Moderno</h3>
+          <p data-i18n="why3_desc">Siempre al día con las últimas tendencias. De clásico a contemporáneo.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <h3 data-i18n="why4_ttl">Servicio Rápido</h3>
+          <p data-i18n="why4_desc">Respetamos tu tiempo. Entras y sales fresco, sin atajos.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">05</div>
+          <h3 data-i18n="why5_ttl">Atención al Detalle</h3>
+          <p data-i18n="why5_desc">Nuca, sienes, líneas — cada detalle importa para que salgas perfecto.</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══════════════════════════════════════════════════ -->
+  <section class="section s-dark" id="contact">
+    <div class="container">
+      <header class="sec-head center">
+        <span class="sec-label" data-i18n="sec_ct_lbl">Contáctanos</span>
+        <h2 class="sec-title" data-i18n="sec_ct_ttl">Reserva tu Cita</h2>
+        <p class="sec-desc" data-i18n="sec_ct_desc">¿Listo para un corte fresco? Contáctanos y te agendamos.</p>
+      </header>
       <div class="contact-grid">
+
         <div class="contact-info">
-          <div class="ci-item">
-            <div class="ci-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.64a16 16 0 006.27 6.27l1.16-1.16a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            </div>
-            <div>
-              <div class="ci-label">Phone</div>
-              <div class="ci-value">+1 (809) 000-0000</div>
-            </div>
+          <div class="ci">
+            <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.64a16 16 0 006.27 6.27l1.16-1.16a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div><div class="ci-lbl" data-i18n="ci_phone_lbl">Teléfono</div><div class="ci-val">+1 (809) 000-0000</div></div>
           </div>
-          <div class="ci-item">
-            <div class="ci-icon wa">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </div>
-            <div>
-              <div class="ci-label">WhatsApp</div>
-              <div class="ci-value">+1 (809) 000-0000</div>
-            </div>
+          <div class="ci">
+            <div class="ci-icon ci-green"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+            <div><div class="ci-lbl" data-i18n="ci_wa_lbl">WhatsApp</div><div class="ci-val">+1 (809) 000-0000</div></div>
           </div>
-          <div class="ci-item">
-            <div class="ci-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <div class="ci-label">Location</div>
-              <div class="ci-value">Santo Domingo, Dominican Republic</div>
-            </div>
+          <div class="ci">
+            <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="ci-lbl" data-i18n="ci_loc_lbl">Ubicación</div><div class="ci-val" data-i18n="ci_loc_val">Santo Domingo, República Dominicana</div></div>
           </div>
-          <div class="ci-item">
-            <div class="ci-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </div>
-            <div>
-              <div class="ci-label">Hours</div>
-              <div class="ci-value">Mon–Sat: 9AM – 8PM<br>Sunday: 10AM – 4PM</div>
-            </div>
+          <div class="ci">
+            <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <div><div class="ci-lbl" data-i18n="ci_hrs_lbl">Horario</div><div class="ci-val" data-i18n="ci_hrs_val">Lun–Sáb: 9AM – 8PM\nDom: 10AM – 4PM</div></div>
           </div>
         </div>
 
         <form class="contact-form" onsubmit="return false;">
           <div class="form-row">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" placeholder="John Doe">
+            <div class="field">
+              <label data-i18n="f_lbl_name">Tu Nombre</label>
+              <input type="text" data-i18n-ph="f_ph_name" placeholder="Juan Pérez">
             </div>
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" placeholder="+1 (809) 000-0000">
+            <div class="field">
+              <label data-i18n="f_lbl_phone">Teléfono</label>
+              <input type="tel" data-i18n-ph="f_ph_phone" placeholder="+1 (809) 000-0000">
             </div>
           </div>
-          <div class="form-group">
-            <label for="service">Service</label>
-            <select id="service">
-              <option value="">Select a service…</option>
-              <option>Classic Haircut</option>
-              <option>Beard Grooming</option>
-              <option>Fade Specialist</option>
-              <option>Kids Cut</option>
-              <option>Premium Package</option>
-              <option>Line Design</option>
+          <div class="field">
+            <label data-i18n="f_lbl_svc">Servicio</label>
+            <select>
+              <option value="" data-i18n="f_svc_ph">Selecciona un servicio…</option>
+              <option data-i18n="svc1_name">Corte Clásico</option>
+              <option data-i18n="svc2_name">Arreglo de Barba</option>
+              <option data-i18n="svc3_name">Fade Specialist</option>
+              <option data-i18n="svc4_name">Corte Infantil</option>
+              <option data-i18n="svc5_name">Paquete Premium</option>
+              <option data-i18n="svc6_name">Diseño de Líneas</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="msg">Message</label>
-            <textarea id="msg" rows="4" placeholder="Any special requests or preferences?"></textarea>
+          <div class="field">
+            <label data-i18n="f_lbl_msg">Mensaje</label>
+            <textarea rows="4" data-i18n-ph="f_ph_msg" placeholder="Alguna solicitud especial o preferencia?"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          <button type="submit" class="btn btn-red btn-full" data-i18n="f_submit">Enviar Mensaje</button>
         </form>
+
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <!-- ══ FOOTER ═══════════════════════════════════════════════════ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="/images/logo.png" alt="D' Handy Flow Factory" class="footer-logo">
-          <p class="footer-tagline">Style. Precision. Identity.</p>
-          <p class="footer-sub">Premium barbershop in the heart of Santo Domingo.</p>
+          <p class="footer-tag" data-i18n="footer_tag">Estilo. Precisión. Identidad.</p>
+          <p class="footer-sub" data-i18n="footer_sub">Barbería premium en el corazón de Santo Domingo.</p>
         </div>
         <div class="footer-nav">
-          <h4>Navigation</h4>
+          <h4 data-i18n="footer_nav_h">Navegación</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home"     data-i18n="nav_home">Inicio</a></li>
+            <li><a href="#services" data-i18n="nav_services">Servicios</a></li>
+            <li><a href="#gallery"  data-i18n="nav_gallery">Galería</a></li>
+            <li><a href="#about"    data-i18n="nav_about">Nosotros</a></li>
+            <li><a href="#contact"  data-i18n="nav_contact">Contacto</a></li>
           </ul>
         </div>
-        <div class="footer-social-col">
-          <h4>Follow Us</h4>
+        <div class="footer-social">
+          <h4 data-i18n="footer_social_h">Síguenos</h4>
           <div class="social-row">
-            <a href="#" class="soc-btn" aria-label="Instagram">
+            <a href="#" class="soc" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
-            <a href="https://wa.me/18090000000" class="soc-btn soc-wa" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <a href="https://wa.me/18090000000" class="soc soc-wa" aria-label="WhatsApp" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 D' Handy Flow Factory. All rights reserved. Santo Domingo, DR.</p>
+      <div class="footer-bar">
+        <p data-i18n="footer_copy">© 2024 D' Handy Flow Factory. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/18090000000" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <a href="https://wa.me/18090000000" class="wa-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    <span class="wa-pulse"></span>
+    <span class="wa-ring"></span>
   </a>
 
   <script src="script.js"></script>
