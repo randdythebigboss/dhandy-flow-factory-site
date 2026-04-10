@@ -5,9 +5,9 @@
 
 /* ── TOKENS ─────────────────────────────────────────────────────── */
 :root {
-  --base:       #07070d;
-  --dark:       #0c0c1a;
-  --card:       #101022;
+  --base:       #080814;
+  --dark:       #0d1028;
+  --card:       #121530;
   --red:        #d91a2f;
   --red-glow:   rgba(217, 26, 47, 0.28);
   --blue:       #1a44cc;
@@ -65,8 +65,8 @@ body::before {
 .section {
   padding: var(--sp) 0;
 }
-.s-base { background: var(--base); }
-.s-dark { background: var(--dark); }
+.s-base { background: linear-gradient(180deg, var(--base) 0%, #090920 100%); }
+.s-dark { background: linear-gradient(180deg, var(--dark) 0%, #0b0e22 100%); }
 
 /* ── TYPOGRAPHY ─────────────────────────────────────────────────── */
 .sec-label {
@@ -101,9 +101,9 @@ body::before {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 15px 30px;
+  padding: 16px 36px;
   font-family: var(--ff-h);
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   font-weight: 600;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -111,16 +111,17 @@ body::before {
   cursor: pointer;
   transition: background var(--r), box-shadow var(--r), transform var(--r), border-color var(--r), color var(--r);
   white-space: nowrap;
-  min-height: 50px; /* touch target */
+  min-height: 54px; /* touch target */
 }
 .btn-red {
   background: var(--red);
   color: #fff;
+  box-shadow: 0 4px 20px rgba(217, 26, 47, 0.3);
 }
 .btn-red:hover {
   background: #f01f37;
-  box-shadow: 0 0 28px var(--red-glow);
-  transform: translateY(-2px);
+  box-shadow: 0 6px 36px rgba(217, 26, 47, 0.55), 0 0 0 1px rgba(217, 26, 47, 0.2);
+  transform: translateY(-3px);
 }
 .btn-ghost {
   background: transparent;
@@ -130,7 +131,8 @@ body::before {
 .btn-ghost:hover {
   border-color: var(--wa);
   color: var(--wa);
-  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(37, 211, 102, 0.2);
+  transform: translateY(-3px);
 }
 .btn-full {
   width: 100%;
@@ -310,8 +312,8 @@ body::before {
   position: absolute;
   top: 0; left: 50%;
   transform: translateX(-50%);
-  width: 600px; height: 600px;
-  background: radial-gradient(ellipse at top, rgba(217, 26, 47, 0.12) 0%, transparent 65%);
+  width: 900px; height: 700px;
+  background: radial-gradient(ellipse at top, rgba(217, 26, 47, 0.18) 0%, rgba(26, 68, 204, 0.07) 45%, transparent 70%);
   pointer-events: none;
 }
 
@@ -348,8 +350,8 @@ body::before {
 /* Logo — the centerpiece */
 .hero-logo-wrap {
   position: relative;
-  width: clamp(100px, 22vw, 160px);
-  margin: 0 auto 22px;
+  width: clamp(150px, 28vw, 230px);
+  margin: 0 auto 26px;
   opacity: 0;
   animation: fadeScale 0.8s cubic-bezier(.22,.68,0,1.2) 0.1s forwards;
 }
@@ -357,8 +359,8 @@ body::before {
 .hero-logo-wrap::before {
   content: '';
   position: absolute;
-  inset: -50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 60%);
+  inset: -60%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.11) 0%, transparent 60%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -367,7 +369,7 @@ body::before {
   height: auto;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 0 18px rgba(255,255,255,0.08));
+  filter: drop-shadow(0 0 28px rgba(255,255,255,0.18)) drop-shadow(0 0 60px rgba(217,26,47,0.12));
 }
 
 .hero-badge {
@@ -469,9 +471,10 @@ body::before {
   transition: transform var(--r), border-color var(--r), background var(--r);
 }
 .svc-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   border-color: var(--border-r);
   border-left-color: var(--red);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45), 0 0 24px rgba(217, 26, 47, 0.06);
 }
 .svc-card.svc-pop {
   border-left-color: var(--red);
@@ -546,12 +549,12 @@ body::before {
   transition: transform 0.6s ease;
   display: block;
 }
-.g-item:hover img { transform: scale(1.06); }
+.g-item:hover img { transform: scale(1.08); }
 .g-cap {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  padding: 14px 16px;
-  background: linear-gradient(to top, rgba(7, 7, 13, 0.88), transparent);
+  padding: 18px 16px;
+  background: linear-gradient(to top, rgba(8, 8, 20, 0.96) 0%, rgba(8, 8, 20, 0.5) 60%, transparent 100%);
   font-family: var(--ff-h);
   font-size: 0.8rem;
   font-weight: 600;
@@ -633,12 +636,12 @@ body::before {
   font-family: var(--ff-d);
   font-size: 4rem;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.14);
   margin-bottom: 10px;
   transition: color var(--r);
   user-select: none;
 }
-.why-item:hover .why-num { color: rgba(217, 26, 47, 0.12); }
+.why-item:hover .why-num { color: rgba(217, 26, 47, 0.35); }
 .why-item h3 {
   font-family: var(--ff-h);
   font-size: 0.9rem;
@@ -668,6 +671,18 @@ body::before {
   border-bottom: 1px solid var(--border);
 }
 .ci:last-child { border: none; padding-bottom: 0; margin-bottom: 0; }
+a.ci-clickable {
+  color: inherit;
+  transition: background var(--r), border-color var(--r), padding-left var(--r);
+  border-radius: 4px;
+}
+a.ci-clickable:hover {
+  background: rgba(37, 211, 102, 0.05);
+  border-bottom-color: rgba(37, 211, 102, 0.2);
+  padding-left: 4px;
+}
+a.ci-clickable:hover .ci-lbl { color: var(--wa); }
+a.ci-clickable:hover .ci-val { color: var(--white); }
 .ci-icon {
   flex-shrink: 0;
   width: 42px; height: 42px;
