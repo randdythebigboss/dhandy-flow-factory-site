@@ -176,12 +176,48 @@
         <p class="sec-desc" data-i18n="sec_gal_desc">Cada corte es una obra. Cada cliente sale con confianza.</p>
       </header>
       <div class="gallery-grid">
-        <div class="g-item"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&h=450&fit=crop&q=80" alt="Premium Fade" loading="lazy"><div class="g-cap">Premium Fade</div></div>
-        <div class="g-item"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&h=450&fit=crop&q=80" alt="Beard Shaping" loading="lazy"><div class="g-cap">Beard Shaping</div></div>
-        <div class="g-item"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=600&h=450&fit=crop&q=80" alt="Fade Haircut" loading="lazy"><div class="g-cap">Fade Haircut</div></div>
-        <div class="g-item"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&h=450&fit=crop&q=80" alt="Classic Cut" loading="lazy"><div class="g-cap">Classic Cut</div></div>
-        <div class="g-item"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&h=450&fit=crop&q=80" alt="Grooming" loading="lazy"><div class="g-cap">Grooming</div></div>
-        <div class="g-item"><img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=600&h=450&fit=crop&q=80" alt="Full Style" loading="lazy"><div class="g-cap">Full Style</div></div>
+        <div class="g-item">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&h=450&q=80&cs=tinysrgb"
+               alt="Corte premium fade en D' Handy Flow Factory"
+               loading="lazy"
+               onerror="this.style.display='none'">
+          <div class="g-cap">Premium Fade</div>
+        </div>
+        <div class="g-item">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&h=450&q=80&cs=tinysrgb"
+               alt="Arreglo de barba profesional"
+               loading="lazy"
+               onerror="this.style.display='none'">
+          <div class="g-cap">Arreglo de Barba</div>
+        </div>
+        <div class="g-item">
+          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&h=450&q=80&cs=tinysrgb"
+               alt="Fade haircut con transición perfecta"
+               loading="lazy"
+               onerror="this.style.display='none'">
+          <div class="g-cap">Fade Haircut</div>
+        </div>
+        <div class="g-item">
+          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&h=450&q=80&cs=tinysrgb"
+               alt="Corte clásico con acabado impecable"
+               loading="lazy"
+               onerror="this.style.display='none'">
+          <div class="g-cap">Corte Clásico</div>
+        </div>
+        <div class="g-item">
+          <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&h=450&q=80&cs=tinysrgb"
+               alt="Barbero en acción con estilo moderno"
+               loading="lazy"
+               onerror="this.style.display='none'">
+          <div class="g-cap">Estilo Moderno</div>
+        </div>
+        <div class="g-item">
+          <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=600&h=450&q=80&cs=tinysrgb"
+               alt="Experiencia completa de barbería premium"
+               loading="lazy"
+               onerror="this.style.display='none'">
+          <div class="g-cap">Experiencia Full</div>
+        </div>
       </div>
     </div>
   </section>
@@ -286,20 +322,20 @@
           </div>
         </div>
 
-        <form class="contact-form" onsubmit="return false;">
+        <form class="contact-form" id="booking-form" novalidate>
           <div class="form-row">
             <div class="field">
-              <label data-i18n="f_lbl_name">Tu Nombre</label>
-              <input type="text" data-i18n-ph="f_ph_name" placeholder="Juan Pérez">
+              <label for="f-name" data-i18n="f_lbl_name">Tu Nombre</label>
+              <input type="text" id="f-name" data-i18n-ph="f_ph_name" placeholder="Juan Pérez" autocomplete="name">
             </div>
             <div class="field">
-              <label data-i18n="f_lbl_phone">Teléfono</label>
-              <input type="tel" data-i18n-ph="f_ph_phone" placeholder="+1 (809) 000-0000">
+              <label for="f-phone" data-i18n="f_lbl_phone">Teléfono</label>
+              <input type="tel" id="f-phone" data-i18n-ph="f_ph_phone" placeholder="+1 (829) 000-0000" autocomplete="tel">
             </div>
           </div>
           <div class="field">
-            <label data-i18n="f_lbl_svc">Servicio</label>
-            <select>
+            <label for="f-svc" data-i18n="f_lbl_svc">Servicio</label>
+            <select id="f-svc">
               <option value="" data-i18n="f_svc_ph">Selecciona un servicio…</option>
               <option data-i18n="svc1_name">Corte Clásico</option>
               <option data-i18n="svc2_name">Arreglo de Barba</option>
@@ -311,11 +347,11 @@
           </div>
           <div class="form-row">
             <div class="field">
-              <label data-i18n="f_lbl_date">Fecha Preferida</label>
+              <label for="appt-date" data-i18n="f_lbl_date">Fecha Preferida</label>
               <input type="date" id="appt-date">
             </div>
             <div class="field">
-              <label data-i18n="f_lbl_time">Hora Preferida</label>
+              <label for="appt-time" data-i18n="f_lbl_time">Hora Preferida</label>
               <select id="appt-time">
                 <option value="" data-i18n="f_time_ph">Selecciona horario…</option>
                 <option>9:00 AM</option><option>9:30 AM</option>
@@ -333,10 +369,13 @@
             </div>
           </div>
           <div class="field">
-            <label data-i18n="f_lbl_msg">Mensaje</label>
-            <textarea rows="3" data-i18n-ph="f_ph_msg" placeholder="Alguna solicitud especial o preferencia?"></textarea>
+            <label for="f-msg" data-i18n="f_lbl_msg">Mensaje</label>
+            <textarea id="f-msg" rows="3" data-i18n-ph="f_ph_msg" placeholder="¿Alguna solicitud especial o preferencia?"></textarea>
           </div>
-          <button type="submit" class="btn btn-red btn-full" data-i18n="f_submit">Enviar Mensaje</button>
+          <button type="submit" class="btn btn-red btn-full">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><rect x="2" y="4" width="16" height="14" rx="2"/><path d="M7 2v4M13 2v4M2 9h16"/></svg>
+            <span data-i18n="f_submit">Enviar Mensaje</span>
+          </button>
         </form>
 
       </div>

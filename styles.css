@@ -7,7 +7,7 @@
 :root {
   --base:       #080814;
   --dark:       #0d1028;
-  --card:       #121530;
+  --card:       #161938;
   --red:        #d91a2f;
   --red-glow:   rgba(217, 26, 47, 0.28);
   --blue:       #1a44cc;
@@ -350,8 +350,8 @@ body::before {
 /* Logo — the centerpiece */
 .hero-logo-wrap {
   position: relative;
-  width: clamp(150px, 28vw, 230px);
-  margin: 0 auto 26px;
+  width: clamp(170px, 32vw, 270px);
+  margin: 0 auto 16px;
   opacity: 0;
   animation: fadeScale 0.8s cubic-bezier(.22,.68,0,1.2) 0.1s forwards;
 }
@@ -359,8 +359,8 @@ body::before {
 .hero-logo-wrap::before {
   content: '';
   position: absolute;
-  inset: -60%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.11) 0%, transparent 60%);
+  inset: -65%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.13) 0%, rgba(217,26,47,0.06) 40%, transparent 65%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -369,7 +369,7 @@ body::before {
   height: auto;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 0 28px rgba(255,255,255,0.18)) drop-shadow(0 0 60px rgba(217,26,47,0.12));
+  filter: drop-shadow(0 0 32px rgba(255,255,255,0.22)) drop-shadow(0 0 70px rgba(217,26,47,0.18));
 }
 
 .hero-badge {
@@ -464,13 +464,14 @@ body::before {
 }
 .svc-card {
   background: var(--card);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.09);
   border-left: 3px solid transparent;
   padding: 28px 22px;
   position: relative;
-  transition: transform var(--r), border-color var(--r), background var(--r);
+  transition: transform var(--r), border-color var(--r), background var(--r), box-shadow var(--r);
 }
 .svc-card:hover {
+  background: #1c2040;
   transform: translateY(-6px);
   border-color: var(--border-r);
   border-left-color: var(--red);
@@ -541,7 +542,7 @@ body::before {
   position: relative;
   overflow: hidden;
   aspect-ratio: 4 / 3;
-  background: var(--card);
+  background: linear-gradient(135deg, #14172e 0%, #1e1a3a 50%, #161234 100%);
 }
 .g-item img {
   width: 100%; height: 100%;

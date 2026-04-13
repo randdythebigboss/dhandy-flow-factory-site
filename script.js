@@ -80,7 +80,7 @@ const i18n = {
     f_lbl_svc:    'Servicio',
     f_lbl_msg:    'Mensaje',
     f_ph_name:    'Juan Pérez',
-    f_ph_phone:   '+1 (809) 000-0000',
+    f_ph_phone:   '+1 (829) 000-0000',
     f_svc_ph:     'Selecciona un servicio…',
     f_ph_msg:     '¿Alguna solicitud especial o preferencia?',
     f_lbl_date:   'Fecha Preferida',
@@ -171,7 +171,7 @@ const i18n = {
     f_lbl_svc:    'Service',
     f_lbl_msg:    'Message',
     f_ph_name:    'John Doe',
-    f_ph_phone:   '+1 (809) 000-0000',
+    f_ph_phone:   '+1 (829) 000-0000',
     f_svc_ph:     'Select a service…',
     f_ph_msg:     'Any special requests or preferences?',
     f_lbl_date:   'Preferred Date',
@@ -329,4 +329,55 @@ function animateCounter(el) {
     el.textContent = v.toLocaleString() + (p >= 1 ? suffix : '');
     if (p < 1) requestAnimationFrame(tick);
   })(start);
+}
+
+/* ── BOOKING FORM → WHATSAPP ────────────────────────────────────── */
+const bookingForm = document.getElementById('booking-form');
+if (bookingForm) {
+  bookingForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name  = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const svc   = document.getElementById('f-svc').value.trim();
+    const date  = document.getElementById('appt-date').value;
+    const time  = document.getElementById('appt-time').value;
+    const msg   = document.getElementById('f-msg').value.trim();
+
+    // Basic validation
+    if (!name) {
+      alert(currentLang === 'es'
+        ? 'Por favor ingresa tu nombre.'
+        : 'Please enter your name.');
+      document.getElementById('f-name').focus();
+      return;
+    }
+    if (!svc) {
+      alert(currentLang === 'es'
+        ? 'Por favor selecciona un servicio.'
+        : 'Please select a service.');
+      document.getElementById('f-svc').focus();
+      return;
+    }
+
+    // Format date for display
+    const dateDisplay = date
+      ? new Date(date + 'T00:00:00').toLocaleDateString(
+          currentLang === 'es' ? 'es-DO' : 'en-US',
+          { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+        )
+      : (currentLang === 'es' ? 'Por confirmar' : 'To be confirmed');
+
+    const timeDisplay  = time  || (currentLang === 'es' ? 'Por confirmar' : 'To be confirmed');
+    const phoneDisplay = phone || (currentLang === 'es' ? 'No indicado'   : 'Not provided');
+
+    let text;
+    if (currentLang === 'es') {
+      text = `Hola, quiero agendar una cita:\n\nNombre: ${name}\nTeléfono: ${phoneDisplay}\nServicio: ${svc}\nFecha: ${dateDisplay}\nHora: ${timeDisplay}${msg ? '\nMensaje: ' + msg : ''}`;
+    } else {
+      text = `Hi, I'd like to book an appointment:\n\nName: ${name}\nPhone: ${phoneDisplay}\nService: ${svc}\nDate: ${dateDisplay}\nTime: ${timeDisplay}${msg ? '\nMessage: ' + msg : ''}`;
+    }
+
+    window.open('https://wa.me/18297129611?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');
+  });
 }
