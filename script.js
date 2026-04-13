@@ -88,11 +88,18 @@ const i18n = {
     f_time_ph:    'Selecciona horario…',
     f_submit:     'Enviar Mensaje',
 
+    gal1_cap:     'Premium Fade',
+    gal2_cap:     'Arreglo de Barba',
+    gal3_cap:     'Fade Haircut',
+    gal4_cap:     'Corte Clásico',
+    gal5_cap:     'Estilo Moderno',
+    gal6_cap:     'Experiencia Full',
+
     footer_tag:      'Estilo. Precisión. Identidad.',
     footer_sub:      'Barbería premium en el corazón de Santo Domingo.',
     footer_nav_h:    'Navegación',
     footer_social_h: 'Síguenos',
-    footer_copy:     '© 2024 D\' Handy Flow Factory. Todos los derechos reservados.',
+    footer_copy:     '© 2025 D\' Handy Flow Factory. Todos los derechos reservados.',
   },
 
   en: {
@@ -179,11 +186,18 @@ const i18n = {
     f_time_ph:    'Select time…',
     f_submit:     'Send Message',
 
+    gal1_cap:     'Premium Fade',
+    gal2_cap:     'Beard Grooming',
+    gal3_cap:     'Fade Haircut',
+    gal4_cap:     'Classic Cut',
+    gal5_cap:     'Modern Style',
+    gal6_cap:     'Full Experience',
+
     footer_tag:      'Style. Precision. Identity.',
     footer_sub:      'Premium barbershop in the heart of Santo Domingo.',
     footer_nav_h:    'Navigation',
     footer_social_h: 'Follow Us',
-    footer_copy:     '© 2024 D\' Handy Flow Factory. All rights reserved.',
+    footer_copy:     '© 2025 D\' Handy Flow Factory. All rights reserved.',
   },
 };
 
@@ -334,31 +348,60 @@ function animateCounter(el) {
 /* ── BOOKING FORM → WHATSAPP ────────────────────────────────────── */
 const bookingForm = document.getElementById('booking-form');
 if (bookingForm) {
+  function setFieldError(fieldId, errId, msg) {
+    const field = document.getElementById(fieldId);
+    const err   = document.getElementById(errId);
+    if (msg) {
+      field.closest('.field').classList.add('field--error');
+      if (err) err.textContent = msg;
+    } else {
+      field.closest('.field').classList.remove('field--error');
+      if (err) err.textContent = '';
+    }
+  }
+
+  // Clear errors on input
+  bookingForm.addEventListener('input', function (e) {
+    const field = e.target.closest('.field');
+    if (field) field.classList.remove('field--error');
+  });
+
   bookingForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const name  = document.getElementById('f-name').value.trim();
-    const phone = document.getElementById('f-phone').value.trim();
-    const svc   = document.getElementById('f-svc').value.trim();
-    const date  = document.getElementById('appt-date').value;
-    const time  = document.getElementById('appt-time').value;
-    const msg   = document.getElementById('f-msg').value.trim();
+    const nameEl  = document.getElementById('f-name');
+    const svcEl   = document.getElementById('f-svc');
+    const phoneEl = document.getElementById('f-phone');
+    const dateEl  = document.getElementById('appt-date');
+    const timeEl  = document.getElementById('appt-time');
+    const msgEl   = document.getElementById('f-msg');
 
-    // Basic validation
+    const name  = nameEl.value.trim();
+    const svc   = svcEl.value.trim();
+    const phone = phoneEl.value.trim();
+    const date  = dateEl.value;
+    const time  = timeEl.value;
+    const msg   = msgEl.value.trim();
+
+    // Clear all errors
+    setFieldError('f-name', 'err-name', '');
+    setFieldError('f-svc',  'err-svc',  '');
+
+    let valid = true;
+
     if (!name) {
-      alert(currentLang === 'es'
-        ? 'Por favor ingresa tu nombre.'
-        : 'Please enter your name.');
-      document.getElementById('f-name').focus();
-      return;
+      setFieldError('f-name', 'err-name',
+        currentLang === 'es' ? 'Ingresa tu nombre.' : 'Please enter your name.');
+      nameEl.focus();
+      valid = false;
     }
     if (!svc) {
-      alert(currentLang === 'es'
-        ? 'Por favor selecciona un servicio.'
-        : 'Please select a service.');
-      document.getElementById('f-svc').focus();
-      return;
+      setFieldError('f-svc', 'err-svc',
+        currentLang === 'es' ? 'Selecciona un servicio.' : 'Please select a service.');
+      if (valid) svcEl.focus();
+      valid = false;
     }
+    if (!valid) return;
 
     // Format date for display
     const dateDisplay = date
@@ -368,14 +411,14 @@ if (bookingForm) {
         )
       : (currentLang === 'es' ? 'Por confirmar' : 'To be confirmed');
 
-    const timeDisplay  = time  || (currentLang === 'es' ? 'Por confirmar' : 'To be confirmed');
-    const phoneDisplay = phone || (currentLang === 'es' ? 'No indicado'   : 'Not provided');
+    const timeDisplay  = time  || (currentLang === 'es' ? 'Por confirmar'  : 'To be confirmed');
+    const phoneDisplay = phone || (currentLang === 'es' ? 'No indicado'    : 'Not provided');
 
     let text;
     if (currentLang === 'es') {
-      text = `Hola, quiero agendar una cita:\n\nNombre: ${name}\nTeléfono: ${phoneDisplay}\nServicio: ${svc}\nFecha: ${dateDisplay}\nHora: ${timeDisplay}${msg ? '\nMensaje: ' + msg : ''}`;
+      text = `Hola, quiero agendar una cita en D' Handy Flow Factory:\n\n👤 Nombre: ${name}\n📞 Teléfono: ${phoneDisplay}\n✂️ Servicio: ${svc}\n📅 Fecha: ${dateDisplay}\n⏰ Hora: ${timeDisplay}${msg ? '\n💬 Mensaje: ' + msg : ''}`;
     } else {
-      text = `Hi, I'd like to book an appointment:\n\nName: ${name}\nPhone: ${phoneDisplay}\nService: ${svc}\nDate: ${dateDisplay}\nTime: ${timeDisplay}${msg ? '\nMessage: ' + msg : ''}`;
+      text = `Hi, I'd like to book an appointment at D' Handy Flow Factory:\n\n👤 Name: ${name}\n📞 Phone: ${phoneDisplay}\n✂️ Service: ${svc}\n📅 Date: ${dateDisplay}\n⏰ Time: ${timeDisplay}${msg ? '\n💬 Message: ' + msg : ''}`;
     }
 
     window.open('https://wa.me/18297129611?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');

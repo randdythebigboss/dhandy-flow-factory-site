@@ -16,7 +16,7 @@
   <header class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#home" class="nav-logo">
-        <img src="/images/logo.png" alt="D' Handy Flow Factory">
+        <img src="images/logo.png" alt="D' Handy Flow Factory">
       </a>
       <nav class="nav-links" id="navLinks">
         <a href="#home"     class="nav-link active" data-i18n="nav_home">Inicio</a>
@@ -52,7 +52,7 @@
     </div>
     <div class="hero-content">
       <div class="hero-logo-wrap">
-        <img src="/images/logo.png" alt="D' Handy Flow Factory" class="hero-logo">
+        <img src="images/logo.png" alt="D' Handy Flow Factory" class="hero-logo">
       </div>
       <p class="hero-badge" data-i18n="hero_badge">Santo Domingo · Est. 2018</p>
       <h1 class="hero-h1">
@@ -177,46 +177,46 @@
       </header>
       <div class="gallery-grid">
         <div class="g-item">
-          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&h=450&q=80&cs=tinysrgb"
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&h=450&q=82"
                alt="Corte premium fade en D' Handy Flow Factory"
                loading="lazy"
-               onerror="this.style.display='none'">
-          <div class="g-cap">Premium Fade</div>
+               onerror="this.parentElement.classList.add('g-item--fallback')">
+          <div class="g-cap"><span data-i18n="gal1_cap">Premium Fade</span></div>
         </div>
         <div class="g-item">
-          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&h=450&q=80&cs=tinysrgb"
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&h=450&q=82"
                alt="Arreglo de barba profesional"
                loading="lazy"
-               onerror="this.style.display='none'">
-          <div class="g-cap">Arreglo de Barba</div>
+               onerror="this.parentElement.classList.add('g-item--fallback')">
+          <div class="g-cap"><span data-i18n="gal2_cap">Arreglo de Barba</span></div>
         </div>
         <div class="g-item">
-          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&h=450&q=80&cs=tinysrgb"
+          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&h=450&q=82"
                alt="Fade haircut con transición perfecta"
                loading="lazy"
-               onerror="this.style.display='none'">
-          <div class="g-cap">Fade Haircut</div>
+               onerror="this.parentElement.classList.add('g-item--fallback')">
+          <div class="g-cap"><span data-i18n="gal3_cap">Fade Haircut</span></div>
         </div>
         <div class="g-item">
-          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&h=450&q=80&cs=tinysrgb"
+          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&h=450&q=82"
                alt="Corte clásico con acabado impecable"
                loading="lazy"
-               onerror="this.style.display='none'">
-          <div class="g-cap">Corte Clásico</div>
+               onerror="this.parentElement.classList.add('g-item--fallback')">
+          <div class="g-cap"><span data-i18n="gal4_cap">Corte Clásico</span></div>
         </div>
         <div class="g-item">
-          <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&h=450&q=80&cs=tinysrgb"
+          <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&h=450&q=82"
                alt="Barbero en acción con estilo moderno"
                loading="lazy"
-               onerror="this.style.display='none'">
-          <div class="g-cap">Estilo Moderno</div>
+               onerror="this.parentElement.classList.add('g-item--fallback')">
+          <div class="g-cap"><span data-i18n="gal5_cap">Estilo Moderno</span></div>
         </div>
         <div class="g-item">
-          <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=600&h=450&q=80&cs=tinysrgb"
+          <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=600&h=450&q=82"
                alt="Experiencia completa de barbería premium"
                loading="lazy"
-               onerror="this.style.display='none'">
-          <div class="g-cap">Experiencia Full</div>
+               onerror="this.parentElement.classList.add('g-item--fallback')">
+          <div class="g-cap"><span data-i18n="gal6_cap">Experiencia Full</span></div>
         </div>
       </div>
     </div>
@@ -327,6 +327,7 @@
             <div class="field">
               <label for="f-name" data-i18n="f_lbl_name">Tu Nombre</label>
               <input type="text" id="f-name" data-i18n-ph="f_ph_name" placeholder="Juan Pérez" autocomplete="name">
+              <span class="field-err" id="err-name"></span>
             </div>
             <div class="field">
               <label for="f-phone" data-i18n="f_lbl_phone">Teléfono</label>
@@ -344,6 +345,7 @@
               <option data-i18n="svc5_name">Paquete Premium</option>
               <option data-i18n="svc6_name">Cuidado de Uñas</option>
             </select>
+            <span class="field-err" id="err-svc"></span>
           </div>
           <div class="form-row">
             <div class="field">
@@ -387,7 +389,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="/images/logo.png" alt="D' Handy Flow Factory" class="footer-logo">
+          <img src="images/logo.png" alt="D' Handy Flow Factory" class="footer-logo">
           <p class="footer-tag" data-i18n="footer_tag">Estilo. Precisión. Identidad.</p>
           <p class="footer-sub" data-i18n="footer_sub">Barbería premium en el corazón de Santo Domingo.</p>
         </div>
